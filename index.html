@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Qazaq AR - Ұлттық киімдер</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-face-aframe.prod.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="ui-container">
+        <button id="btn-saukele" class="ar-button">Сәукеле</button>
+        <button id="btn-syrga" class="ar-button">Сырға</button>
+        <button id="btn-clear" class="ar-button action">Тазалау</button>
+    </div>
+
+    <a-scene mindar-face embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+        
+  <a-assets>
+    <a-asset-item id="headModel" src="./assets/mening_saukelem.glb"></a-asset-item>
+    <a-asset-item id="earringModel" src="./assets/mening_syrgam.glb"></a-asset-item>
+</a-assets>
+
+        <a-camera active="false" position="0 0 0"></a-camera>
+
+        <a-entity mindar-face-target="anchorIndex: 10">
+            <a-gltf-model id="saukele-entity" src="#headModel" position="0 -0.5 0" scale="0.1 0.1 0.1" visible="true"></a-gltf-model>
+        </a-entity>
+<a-entity mindar-face-target="anchorIndex: 10">
+    <a-gltf-model src="#headModel" 
+        position="0 -0.5 0" 
+        scale="0.1 0.1 0.1" 
+        rotation="0 0 0">
+    </a-gltf-model>
+</a-entity>
+        <a-entity mindar-face-target="anchorIndex: 127">
+            <a-gltf-model id="syrga-left-entity" src="#earringModel" position="0 -0.1 0" scale="0.05 0.05 0.05" visible="false"></a-gltf-model>
+        </a-entity>
+        
+        <a-entity mindar-face-target="anchorIndex: 356">
+            <a-gltf-model id="syrga-right-entity" src="#earringModel" position="0 -0.1 0" scale="0.05 0.05 0.05" visible="false"></a-gltf-model>
+        </a-entity>
+
+    </a-scene>
+
+    <script src="main.js"></script>
+</body>
+</html>

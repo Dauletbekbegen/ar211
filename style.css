@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Түймелер контейнері */
+.ui-container {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* Камераның үстінде тұруы үшін */
+    gap: 10px;
+}
+
+/* Түймелер стилі */
+.ar-button {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid #00a8cc; /* Қазақ оюының түсіндей көк */
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.ar-button:active {
+    background-color: #00a8cc;
+    color: white;
+}
+
+.action {
+    border-color: #ff4757;
+    color: #ff4757;
+}
